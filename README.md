@@ -2,7 +2,7 @@
 
 A Python GUI application that helps convert video files to make them compatible with iOS devices. This tool automatically scans directories for MP4 files and converts them to use H.264 video codec and AAC audio codec, ensuring compatibility with iOS devices.
 
-![Codec Conversion Process](images/codec_converted.JPG)
+![Codec Conversion Process](images/codec_converter.JPG)
 
 ## Features
 
@@ -48,8 +48,6 @@ Before running the application, make sure you have the following installed:
 3. Click "Start Conversion" to begin the process
 4. Monitor progress in the text area and total progress percentage
 5. Use "Stop Conversion" button if needed to halt the process
-
-![Conversion Progress](images/progress.JPG)
 
 ## How It Works
 
