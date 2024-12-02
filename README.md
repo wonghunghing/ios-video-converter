@@ -2,6 +2,8 @@
 
 A Python GUI application that helps convert video files to make them compatible with iOS devices. This tool automatically scans directories for MP4 files and converts them to use H.264 video codec and AAC audio codec, ensuring compatibility with iOS devices.
 
+![Codec Conversion Process](images/codec_converted.JPG)
+
 ## Features
 
 - User-friendly graphical interface
@@ -9,8 +11,6 @@ A Python GUI application that helps convert video files to make them compatible 
 - Automatic codec compatibility checking
 - Real-time conversion progress display
 - Batch processing capability
-- Progress percentage indicator
-- Ability to stop conversion mid-process
 - Compatible with Windows, macOS, and Linux
 
 ## Prerequisites
@@ -19,7 +19,10 @@ Before running the application, make sure you have the following installed:
 
 - Python 3.6 or higher
 - FFmpeg (must be accessible from command line)
-- tkinter (usually comes with Python installation)
+- Required Python packages:
+  ```bash
+  pip install tkinter
+  ```
 
 ## Installation
 
@@ -46,27 +49,24 @@ Before running the application, make sure you have the following installed:
 4. Monitor progress in the text area and total progress percentage
 5. Use "Stop Conversion" button if needed to halt the process
 
+![Conversion Progress](images/progress.JPG)
+
 ## How It Works
 
 - The application scans the selected directory and all subdirectories for MP4 files
 - Each file is checked for codec compatibility:
   - Video codec must be H.264
   - Audio codec must be AAC or MP3
-- Incompatible files are automatically converted using FFmpeg with the following settings:
-  - Video: H.264 codec
-  - Audio: AAC codec at 128k bitrate
-  - MP4 container with faststart flag
+- Incompatible files are automatically converted using FFmpeg
 - Original files are preserved, and converted files are saved with "_converted" suffix
-- Progress is displayed in real-time with both detailed console output and overall percentage
 
 ## Technical Details
 
 - Built with Python's tkinter library for GUI
-- Uses FFmpeg for video conversion and FFprobe for codec detection
-- Implements console output redirection to GUI
+- Uses FFmpeg for video conversion
+- Uses FFprobe for codec detection
 - Runs conversions in separate threads to maintain GUI responsiveness
-- Features a stop mechanism for canceling conversions
-- Includes total progress tracking
+- Includes real-time console output redirection to GUI
 
 ## Contributing
 
